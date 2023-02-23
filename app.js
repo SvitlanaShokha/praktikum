@@ -63,3 +63,31 @@ const galleryItems = [
     description: "Lighthouse Coast Sea",
   },
 ];
+  
+const list = document.querySelector(".js-gallery")
+const modalWindow = document.querySelector(".js-lightbox")
+const modalImage = document.querySelector(".lightbox__image")
+const btnClose = document.querySelector('[data-action="close-lightbox"]')
+
+function imgCloseHandler() {
+  modalWindow.classList.toggle('is-open')
+  modalImage.src = ""
+  
+}
+
+function imgOpenHandler(evt) {
+  modalWindow.classList.toggle('is-open')
+  modalImage.src = evt.target.dataset.source
+}
+
+const result = galleryItems.map(item => 
+  `<li class='gallery__item'>
+    <img src=${item.preview} alt=${item.description} data-source="${item.original}"class="gallery__image"></img>
+  </li>` 
+)
+
+list.insertAdjacentHTML('afterbegin', result.join(' '))
+const galleryImages = document.querySelectorAll(".gallery__image")
+
+galleryImages.forEach(image => image.addEventListener('click', imgOpenHandler))
+btnClose.addEventListener('click', imgCloseHandler)
