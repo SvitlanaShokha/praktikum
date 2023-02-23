@@ -91,3 +91,5 @@ const galleryImages = document.querySelectorAll(".gallery__image")
 
 galleryImages.forEach(image => image.addEventListener('click', imgOpenHandler))
 btnClose.addEventListener('click', imgCloseHandler)
+
+// test git
