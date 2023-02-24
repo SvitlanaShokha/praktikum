@@ -72,7 +72,6 @@ const btnClose = document.querySelector('[data-action="close-lightbox"]')
 function imgCloseHandler() {
   modalWindow.classList.toggle('is-open')
   modalImage.src = ""
-  
 }
 
 function imgOpenHandler(evt) {
@@ -91,5 +90,3 @@ const galleryImages = document.querySelectorAll(".gallery__image")
 
 galleryImages.forEach(image => image.addEventListener('click', imgOpenHandler))
 btnClose.addEventListener('click', imgCloseHandler)
-
-// test git
